@@ -1,0 +1,74 @@
+.intro {
+  z-index: 50;
+  background: transparent;
+  transform: none;
+  transition: none;
+  pointer-events: auto;
+  isolation: isolate;
+}
+.intro-shutters {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-rows: repeat(6, 1fr);
+  z-index: 1;
+}
+.intro-shutters i {
+  display: block;
+  min-height: 0;
+  background: linear-gradient(110deg, color-mix(in srgb, var(--bg), #000 14%), var(--bg) 48%, color-mix(in srgb, var(--panel), var(--bg) 62%));
+  box-shadow: 0 1px 0 color-mix(in srgb, var(--lime), transparent 91%);
+}
+.intro-mark {
+  position: relative;
+  z-index: 2;
+  isolation: isolate;
+  color: var(--text);
+  font-size: clamp(96px, 18vw, 220px);
+  font-weight: 800;
+  letter-spacing: -.11em;
+  animation: introElectric 1.72s steps(1, end) both;
+  text-shadow: 0 0 5px #fff, 0 0 22px color-mix(in srgb, var(--lime), transparent 8%), 0 0 58px color-mix(in srgb, var(--lime), transparent 18%);
+}
+.intro-mark::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: -45%;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, color-mix(in srgb, var(--lime), transparent 67%) 0, color-mix(in srgb, var(--lime), transparent 91%) 43%, transparent 70%);
+  filter: blur(16px);
+  animation: introGlowFlicker 1.72s steps(1, end) both;
+}
+.intro.opening .intro-mark { animation: introMarkOut .32s ease both; }
+.intro.opening .intro-shutters i { animation: introShutterRight .78s cubic-bezier(.76, 0, .24, 1) both; }
+.intro.opening .intro-shutters i:nth-child(even) { animation-name: introShutterLeft; }
+.intro.opening .intro-shutters i:nth-child(1), .intro.opening .intro-shutters i:nth-child(6) { animation-delay: .18s; }
+.intro.opening .intro-shutters i:nth-child(2), .intro.opening .intro-shutters i:nth-child(5) { animation-delay: .09s; }
+.intro.done { visibility: hidden; pointer-events: none; }
+@keyframes introElectric {
+  0%, 100% { opacity: 1; filter: brightness(1); transform: scale(1.08); }
+  8% { opacity: .12; filter: brightness(.4); transform: scale(1.02); }
+  12% { opacity: 1; filter: brightness(2.1); transform: scale(1.14); }
+  17% { opacity: .42; filter: brightness(.72); }
+  22% { opacity: 1; filter: brightness(1.7); transform: scale(1.1); }
+  27% { opacity: .16; filter: brightness(.5); }
+  31% { opacity: 1; filter: brightness(2.4); transform: scale(1.16); }
+  36% { opacity: .62; filter: brightness(.9); }
+  42%, 82% { opacity: 1; filter: brightness(1.35); transform: scale(1.08); }
+  86% { opacity: .78; filter: brightness(.8); }
+  90% { opacity: 1; filter: brightness(1.6); transform: scale(1.12); }
+}
+@keyframes introGlowFlicker {
+  0%, 100% { opacity: .9; transform: scale(1); }
+  8%, 17%, 27%, 36%, 86% { opacity: .12; transform: scale(.88); }
+  12%, 22%, 31%, 42%, 82%, 90% { opacity: 1; transform: scale(1.12); }
+}
+@keyframes introMarkOut { to { opacity: 0; filter: blur(12px); transform: scale(1.22); } }
+@keyframes introShutterRight { to { transform: translateX(105%) scaleY(.18); opacity: 0; } }
+@keyframes introShutterLeft { to { transform: translateX(-105%) scaleY(.18); opacity: 0; } }
+@media (prefers-reduced-motion: reduce) {
+  .intro-mark, .intro-mark::before { animation: none; opacity: 1; }
+  .intro.opening .intro-mark { animation: introMarkOut .01ms both; }
+  .intro.opening .intro-shutters i { animation-duration: .01ms; animation-delay: 0s !important; }
+}

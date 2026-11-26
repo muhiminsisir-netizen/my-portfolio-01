@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f3f0e8" />
+  <meta name="description" content="Video editor and website developer crafting digital experiences and visual stories." />
+  <title>Tashrif Muhimin — Creative Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="effects.css" />
+  <link rel="stylesheet" href="editorial.css" />
+  <link rel="stylesheet" href="themes.css" />
+  <link rel="stylesheet" href="video-gallery.css" />
+  <link rel="stylesheet" href="intro-animation.css" />
+  <link rel="stylesheet" href="mobile-fixes.css?v=2" />
+  <link rel="stylesheet" href="selected-reels.css" />
+  <link rel="stylesheet" href="brand-showcase.css?v=2" />
+  <script defer src="script.js"></script>
+</head>
+<body class="autumn-editorial" data-theme="green">
+  <div class="intro" aria-hidden="true"><div class="intro-shutters"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="intro-mark">TM<span>.</span></div></div>
+  <div class="grain" aria-hidden="true"></div>
+  <canvas class="cursor-trail" aria-hidden="true"></canvas>
+  <div class="cursor-ball" aria-hidden="true"><i></i><i></i><i></i></div>
+  <div class="theme-picker" role="group" aria-label="Choose portfolio color theme">
+    <span class="theme-label">COLOR</span>
+    <button class="theme-swatch" data-theme="red" aria-label="Red theme" aria-pressed="false"><i></i></button>
+    <button class="theme-swatch" data-theme="purple" aria-label="Purple theme" aria-pressed="false"><i></i></button>
+    <button class="theme-swatch" data-theme="green" aria-label="Green theme" aria-pressed="false"><i></i></button>
+    <button class="theme-swatch" data-theme="blue" aria-label="Blue theme" aria-pressed="false"><i></i></button>
+  </div>
+  <div class="theme-transition" aria-hidden="true"></div>
+  <div class="spider-corner">
+    <span class="spider-thread" aria-hidden="true"></span>
+    <button class="spider-pull" type="button" aria-expanded="false" aria-controls="spider-drawer" aria-label="Pull Spider-Man down to open the menu">
+      <img class="spider-figure" src="assets/spider-man-hanging-3x.png?v=1" alt="" draggable="false" decoding="async" />
+      <span class="spider-hint" aria-hidden="true">PULL</span>
+    </button>
+    <nav class="spider-drawer" id="spider-drawer" aria-label="Quick links" aria-hidden="true">
+      <span class="spider-drawer-kicker">QUICK LINKS</span>
+      <a href="#work"><span>Selected work</span><i>02</i></a>
+      <a href="#services"><span>Services</span><i>03</i></a>
+      <a href="#about"><span>Clothing brand</span><i>04</i></a>
+    </nav>
+  </div>
+  <header class="site-header">
+    <a class="wordmark" href="#home" aria-label="Tashrif Muhimin home">TM<span>.</span></a>
+    <nav class="desktop-nav" aria-label="Main navigation"><a href="#work">Selected work</a><a href="#services">Services</a><a href="#about">Clothing brand</a><a href="#contact">Contact</a></nav>
+    <a class="availability" href="#contact"><i></i> Available for projects <span>↗</span></a>
+    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+  </header>
+  <main>
+    <section class="hero section-wrap" id="home">
+      <div class="poster-backdrop-word" aria-hidden="true">TASHRIF</div>
+      <div class="hero-portrait-stage"><img class="hero-person" src="assets/hero-portrait-photoroom.png?v=1" srcset="assets/hero-portrait-mobile.png 840w, assets/hero-portrait-photoroom.png 1122w" sizes="(max-width: 640px) 100vw, (max-width: 900px) 57vw, 590px" alt="Portrait of the portfolio creator" decoding="async" fetchpriority="high" /></div>
+      <div class="poster-typography"><span class="poster-topline"><span class="poster-top-black">TASHRIF</span><span class="poster-top-white">MUHIMIN</span></span><span class="poster-main-name">MUHIMIN</span></div>
+      <div class="hero-role-marquee" role="img" aria-label="Video Editor and Website Developer">
+        <div class="hero-role-track" aria-hidden="true">
+          <span class="hero-role-group"><b>VIDEO EDITOR</b><i>✳</i><b>WEBSITE DEVELOPER</b><i>✳</i></span>
+          <span class="hero-role-group"><b>VIDEO EDITOR</b><i>✳</i><b>WEBSITE DEVELOPER</b><i>✳</i></span>
+        </div>
+      </div>
+      <a class="scroll-cue" href="#work"><span class="scroll-line"></span>SCROLL TO EXPLORE</a>
+      <div class="hero-index">PORTFOLIO — 2025 / 26</div>
+    </section>
+    <section class="work section-wrap" id="work"><div class="section-top reveal"><span class="eyebrow">02 / SELECTED WORK</span><span class="section-rule"></span><span class="mono">SHORT-FORM VIDEO</span></div><div class="work-heading reveal"><h2>What I’ve <em>created.</em></h2></div>
+      <div class="reel-showcase reveal">
+        <div class="reel-showcase-heading"><span class="mono">SEVEN FILMS / CHOOSE A REEL</span><div class="reel-controls" aria-label="Browse videos"><button type="button" data-reel-scroll="-1" aria-label="Show previous video">←</button><button type="button" data-reel-toggle aria-label="Pause automatic video shuffle" title="Pause automatic shuffle">Ⅱ</button><button type="button" data-reel-scroll="1" aria-label="Show next video">→</button></div></div>
+        <div class="reel-rail" id="selected-reels" role="region" aria-label="Seven short-form videos" tabindex="0">
+          <article class="reel-card"><video controls playsinline preload="metadata" aria-label="Handmade card ideas video one"><source src="assets/selected-work/02-handmade-cards.mp4" type="video/mp4" /></video><div class="reel-caption"><span class="mono">01 / HANDMADE</span><h4>Cards to keep</h4></div></article>
+          <article class="reel-card"><video controls playsinline preload="metadata" aria-label="Handmade card ideas video two"><source src="assets/selected-work/03-handmade-cards.mp4" type="video/mp4" /></video><div class="reel-caption"><span class="mono">02 / HANDMADE</span><h4>Little paper details</h4></div></article>
+          <article class="reel-card"><video controls playsinline preload="metadata" aria-label="Handmade card ideas video three"><source src="assets/selected-work/04-handmade-cards.mp4" type="video/mp4" /></video><div class="reel-caption"><span class="mono">03 / HANDMADE</span><h4>Made with care</h4></div></article>
+          <article class="reel-card"><video controls playsinline preload="metadata" aria-label="Visual inspiration video"><source src="assets/selected-work/05-visual-study.mp4" type="video/mp4" /></video><div class="reel-caption"><span class="mono">04 / VISUAL STUDY</span><h4>Ideas in detail</h4></div></article>
+          <article class="reel-card"><video controls playsinline preload="metadata" aria-label="Cozy meal prep inspiration video"><source src="assets/video-editing/cozy-meal-prep.mp4" type="video/mp4" /></video><div class="reel-caption"><span class="mono">05 / LIFESTYLE</span><h4>Cozy meal prep</h4></div></article>
+          <article class="reel-card"><video controls playsinline preload="metadata" aria-label="Digital product ideas video one"><source src="assets/selected-work/07-digital-products.mp4" type="video/mp4" /></video><div class="reel-caption"><span class="mono">06 / DIGITAL</span><h4>Digital product ideas</h4></div></article>
+          <article class="reel-card"><video controls playsinline preload="metadata" aria-label="Digital product ideas video two"><source src="assets/selected-work/08-digital-products.mp4" type="video/mp4" /></video><div class="reel-caption"><span class="mono">07 / DIGITAL</span><h4>Designed to stand out</h4></div></article>
+        </div>
+        <p class="reel-swipe-note mono">TAP A VIDEO TO HOLD & WATCH · TAP ↻ TO RESUME SHUFFLE</p>
+      </div>
+    </section>
+    <section class="services section-wrap" id="services"><div class="section-top reveal"><span class="eyebrow">03 / WHAT I DO</span><span class="section-rule"></span><span class="mono">THOUGHTFUL FROM START TO FINISH</span></div><div class="service-heading reveal"><h2>Two disciplines.<br /><em>One point of view.</em></h2><p>Whether it moves across a screen or invites someone in, every detail earns its place.</p></div><div class="service-list">
+      <article class="service-row reveal"><div class="service-number">01</div><button class="service-visual video-visual video-visual-trigger" type="button" data-video-gallery aria-label="Open the video editing reel gallery"><span class="video-frame"><video class="service-reel-preview" muted autoplay loop playsinline preload="metadata"><source src="assets/video-editing/cozy-meal-prep.mp4" type="video/mp4" /></video><span class="video-frame-label">PLAY REEL <b>↗</b></span></span></button><div class="service-info"><h3><button class="video-title-trigger" type="button" data-video-gallery>Video<br />editing<span>.</span><small>VIEW 04 FILMS&nbsp; ↗</small></button></h3><p>Emotion, shaped in every frame. Cinematic edits made to hold attention and leave a feeling.</p><div class="tags"><span>FILM & CAMPAIGNS</span><span>REELS & SHORTS</span><span>COLOR & MOTION</span></div></div><a href="#work" class="row-arrow" aria-label="View selected video editing work">↗</a></article>
+      <article class="service-row reveal"><div class="service-number">02</div><a class="service-visual web-visual web-video-visual" href="https://aladinercherag.shop/" target="_blank" rel="noopener noreferrer" aria-label="Open Aladiner Cherag website"><video class="website-dev-preview" muted autoplay loop playsinline preload="metadata" aria-label="Painted pot ideas video preview"><source src="assets/website-development/painted-pot-ideas.mp4" type="video/mp4" /></video></a><div class="service-info"><h3><a href="https://aladinercherag.shop/" target="_blank" rel="noopener noreferrer">Website<br />development<span>.</span></a></h3><p>Distinctive digital homes that feel effortless to use and impossible to mistake for anyone else's.</p><div class="tags"><span>PORTFOLIOS</span><span>BRAND WEBSITES</span><span>INTERACTION</span></div></div><a href="https://aladinercherag.shop/" target="_blank" rel="noopener noreferrer" class="row-arrow" aria-label="Open Aladiner Cherag website">↗</a></article>
+    </div></section>
+    <section class="brand-section section-wrap" id="about" aria-label="Aladiner Cherag clothing brand website">
+      <div class="section-top reveal"><span class="eyebrow">04 / CLOTHING BRAND</span><span class="section-rule"></span><span class="mono">ALADINER CHERAG / ONLINE STORE</span></div>
+      <div class="brand-showcase reveal">
+        <a class="brand-preview" href="https://aladinercherag.shop/" target="_blank" rel="noopener noreferrer" aria-label="Visit the Aladiner Cherag online store">
+          <div class="brand-browser-bar" aria-hidden="true"><span class="brand-browser-mark">AC</span><span class="brand-browser-name">ALADINER CHERAG</span><span class="brand-browser-address">aladinercherag.shop</span><span class="brand-browser-menu">LIVE SITE&nbsp; ↗</span></div>
+          <div class="brand-preview-scene">
+            <div class="brand-logo-stage"><span class="brand-logo-glow"></span><img src="assets/aladiner-cherag-logo-cutout.png" alt="Aladiner Cherag graffiti logo" decoding="async" /></div>
+            <span class="brand-view-bubble">VIEW <b>↗</b></span>
+          </div>
+        </a>
+        <article class="brand-details">
+          <span class="brand-current mono">( CURRENT WEBSITE )</span>
+          <h2>Aladiner<br /><em>Cherag.</em></h2>
+          <p>A clothing brand and online store where visitors can explore the collection and shop products directly.</p>
+          <div class="brand-tags"><span>Clothing</span><span>Online store</span><span>Shop products</span></div>
+          <a class="brand-visit" href="https://aladinercherag.shop/" target="_blank" rel="noopener noreferrer">View Site <span>↗</span></a>
+        </article>
+      </div>
+    </section>
+    <section class="approach section-wrap"><div class="section-top reveal"><span class="eyebrow">05 / HOW I WORK</span><span class="section-rule"></span><span class="mono">GOOD THINGS TAKE INTENTION</span></div><div class="approach-grid"><h2 class="reveal">Clear thinking.<br /><em>Careful making.</em></h2><div class="approach-list"><article class="approach-step reveal"><span class="mono">01 / DISCOVER</span><p>We start with the why. Who is it for, what should it do, how should it feel?</p></article><article class="approach-step reveal"><span class="mono">02 / SHAPE</span><p>Find the simplest, most distinctive idea. Align on a direction before making it real.</p></article><article class="approach-step reveal"><span class="mono">03 / MAKE</span><p>Craft, refine, and sweat the details until the work feels considered from every angle.</p></article><article class="approach-step reveal"><span class="mono">04 / DELIVER</span><p>Polish the last 10%. Hand over something ready to work beautifully in the real world.</p></article></div></div><div class="skills-strip reveal"><span class="mono">IN THE TOOLKIT</span><div><span>PREMIERE PRO</span><span>AFTER EFFECTS</span><span>CAPCUT</span><span>HTML / CSS</span><span>JAVASCRIPT</span><span>REACT</span><span>FIGMA</span></div></div></section>
+    <section class="contact section-wrap" id="contact">
+      <div class="contact-portrait" aria-hidden="true"><img src="assets/hero-portrait-photoroom.png?v=1" srcset="assets/hero-portrait-mobile.png 840w, assets/hero-portrait-photoroom.png 1122w" sizes="(max-width: 640px) 86vw, 44vw" alt="" loading="lazy" decoding="async" /></div>
+      <div class="section-top reveal"><span class="eyebrow">A GOOD PLACE TO START</span><span class="section-rule"></span><span class="mono">CURRENTLY OPEN FOR SELECT PROJECTS</span></div>
+      <div class="contact-layout">
+        <div class="contact-content reveal"><p class="eyebrow">HAVE SOMETHING IN MIND?</p><h2>Let's make<br />it <em>matter.</em></h2><a class="contact-email" href="mailto:tmsisir38@gmail.com">tmsisir38@gmail.com <span>↗</span></a></div>
+        <aside class="contact-socials" aria-label="Social profiles">
+          <span class="contact-socials-label">FIND ME ONLINE</span>
+          <a class="contact-social-link" href="https://www.linkedin.com/in/tashrif-muhimin-sisir" target="_blank" rel="noreferrer"><span>LinkedIn</span><i>↗</i></a>
+          <a class="contact-social-link" href="https://www.facebook.com/share/1AAtAxECCh/" target="_blank" rel="noreferrer"><span>Facebook</span><i>↗</i></a>
+          <a class="contact-social-link" href="https://www.instagram.com/muhimin_sisir/" target="_blank" rel="noreferrer"><span>Instagram</span><i>↗</i></a>
+        </aside>
+      </div>
+      <div class="contact-bottom"><p>Tell me what you're working on.<br />I'll get back to you within a couple of days.</p></div>
+    </section>
+  </main>
+  <dialog class="video-gallery" aria-labelledby="video-gallery-title">
+    <div class="video-gallery-shell">
+      <header class="video-gallery-header"><div><span class="eyebrow">01 / VIDEO EDITING</span><h2 id="video-gallery-title">A few stories <em>in motion.</em></h2></div><button class="video-gallery-close" type="button" aria-label="Close video gallery">×</button></header>
+      <div class="video-gallery-grid">
+        <article class="video-gallery-card"><video controls playsinline preload="metadata"><source src="assets/video-editing/cozy-meal-prep.mp4" type="video/mp4" /></video><div class="video-gallery-caption"><span class="mono">01 / MEAL PREP</span><h3>Cozy, made simple.</h3></div></article>
+        <article class="video-gallery-card"><video controls playsinline preload="metadata"><source src="assets/video-editing/upcycled-decor.mp4" type="video/mp4" /></video><div class="video-gallery-caption"><span class="mono">02 / UPCYCLED DECOR</span><h3>Luxe, made again.</h3></div></article>
+        <article class="video-gallery-card"><video controls playsinline preload="metadata"><source src="assets/video-editing/romantic-ideas-847802698634335546.mp4" type="video/mp4" /></video><div class="video-gallery-caption"><span class="mono">03 / ROMANTIC IDEAS</span><h3>Small things, softly told.</h3></div></article>
+        <article class="video-gallery-card"><video controls playsinline preload="metadata"><source src="assets/video-editing/romantic-ideas-1149051292430624460.mp4" type="video/mp4" /></video><div class="video-gallery-caption"><span class="mono">04 / ROMANTIC IDEAS</span><h3>A little everyday romance.</h3></div></article>
+      </div>
+      <p class="video-gallery-note mono">SELECT A FILM TO PLAY</p>
+    </div>
+  </dialog>
+  <footer class="site-footer"><a class="wordmark" href="#home">TM<span>.</span></a><span class="mono">INDEPENDENT CREATIVE · DHAKA</span><span class="mono">© <span id="year">2025</span> TASHRIF MUHIMIN</span><a class="back-top mono" href="#home">BACK TO TOP ↑</a></footer>
+  <a class="whatsapp-float" href="https://wa.me/8801974423834" target="_blank" rel="noopener noreferrer" aria-label="Chat with Tashrif on WhatsApp at +8801974423834">
+    <span class="whatsapp-tooltip" aria-hidden="true">Chat on WhatsApp</span>
+    <span class="whatsapp-badge" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M16 3.2A12.6 12.6 0 0 0 5.2 22.3L3.5 28.5l6.4-1.7A12.6 12.6 0 1 0 16 3.2Zm0 22.9c-1.9 0-3.7-.5-5.2-1.5l-.4-.2-3.8 1 1-3.7-.3-.4A10.3 10.3 0 1 1 16 26.1Zm5.7-7.7c-.3-.2-1.8-.9-2.1-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7.1a8.4 8.4 0 0 1-2.5-1.5 9.2 9.2 0 0 1-1.7-2.1c-.2-.3 0-.5.1-.6l.5-.6.3-.5c.1-.2 0-.4 0-.6s-.7-1.7-.9-2.3-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4s-1.2 1.2-1.2 2.9 1.2 3.3 1.4 3.5 2.4 3.7 5.8 5.1c.8.3 1.4.5 1.9.6.8.3 1.5.2 2.1.1.7-.1 1.8-.7 2-1.4s.3-1.3.2-1.4-.3-.2-.6-.4Z"/></svg></span>
+  </a>
+</body>
+</html>
